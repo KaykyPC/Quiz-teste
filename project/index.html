@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Carros com Transições Fluidas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-text-small">THE</div>
+                <div class="logo-text-large">Future</div>
+            </div>
+            <div class="flag">
+                <div class="flag-inner">
+                    <div class="flag-center"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quiz Content -->
+        <main class="quiz-content">
+            <div class="quiz-container">
+                <!-- Left Card (Blue) -->
+                <div class="left-card">
+                    <h2 class="card-title">Financiamento personalizado</h2>
+                    <p class="card-subtitle">Vamos encontrar a melhor opção para você</p>
+                    
+                    <div class="car-image">
+                        <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" alt="Carro">
+                    </div>
+                </div>
+
+                <!-- Right Card (White) -->
+                <div class="right-card">
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question Container -->
+                    <div class="question-container">
+                        <!-- Step 1 -->
+                        <div class="question-step active" id="step1">
+                            <h3 class="question-title">Qual é a faixa de preço do carro que você quer comprar?</h3>
+                            <div class="options">
+                                <button class="option-btn" onclick="selectPriceRange('De R$ 25.000 a R$ 50.000')">
+                                    <span>De R$ 25.000 a R$ 50.000</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="option-btn" onclick="selectPriceRange('De R$ 50.000 a R$ 90.000')">
+                                    <span>De R$ 50.000 a R$ 90.000</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="option-btn" onclick="selectPriceRange('De R$ 90.000 a R$ 125.000')">
+                                    <span>De R$ 90.000 a R$ 125.000</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="option-btn" onclick="selectPriceRange('Mais de R$ 125.000')">
+                                    <span>Mais de R$ 125.000</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="question-step" id="step2">
+                            <h3 class="question-title">Quanto você gostaria de pagar por mês pelo seu carro?</h3>
+                            <div class="options">
+                                <button class="option-btn" onclick="selectMonthlyPayment('Menos de R$ 750')">
+                                    <span>Menos de R$ 750</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="option-btn" onclick="selectMonthlyPayment('De R$ 750 a R$ 1.250')">
+                                    <span>De R$ 750 a R$ 1.250</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="option-btn" onclick="selectMonthlyPayment('De R$ 1.250 a R$ 1.750')">
+                                    <span>De R$ 1.250 a R$ 1.750</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="option-btn" onclick="selectMonthlyPayment('Mais de R$ 1.750')">
+                                    <span>Mais de R$ 1.750</span>
+                                    <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="9,18 15,12 9,6"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

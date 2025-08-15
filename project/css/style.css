@@ -1,0 +1,415 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1E3A8A;
+    --primary-hover: #1E40AF;
+    --secondary-color: #0F172A;
+    --text-color: #333;
+    --bg-light: #f8f9fa;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 20px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header otimizado */
+.header {
+    background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+
+.flag-img {
+    width: clamp(30px, 8vw, 40px);
+    height: auto;
+    aspect-ratio: 3/2;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Main Content */
+.main-content {
+    padding: clamp(1rem, 4vw, 2rem);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quiz-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    min-height: clamp(500px, 80vh, 600px);
+    position: relative;
+}
+
+.question-screen {
+    display: none;
+    min-height: clamp(500px, 80vh, 600px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.question-screen.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    padding: clamp(2rem, 6vw, 3rem);
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.car-image {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.car-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    padding: clamp(2rem, 6vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), #3B82F6);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.question-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.question-title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: clamp(1rem, 3vw, 1.2rem) 2rem;
+    border-radius: 50px;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-btn:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+}
+
+.option-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Result Screen */
+.result-content {
+    padding: clamp(2rem, 6vw, 3rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: clamp(500px, 80vh, 600px);
+}
+
+.result-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.result-subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+.result-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: clamp(1.5rem, 4vw, 2rem);
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+.result-card h3 {
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.result-details {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.result-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.result-item strong {
+    color: var(--secondary-color);
+}
+
+.cta-button {
+    background: linear-gradient(90deg, var(--primary-color), #3B82F6);
+    color: white;
+    border: none;
+    padding: clamp(1rem, 3vw, 1rem) 2rem;
+    border-radius: 50px;
+    font-size: clamp(1.1rem, 3vw, 1.2rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    min-width: 200px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .question-screen.active {
+        flex-direction: column;
+    }
+    
+    .left-section,
+    .right-section {
+        flex: none;
+        min-height: auto;
+    }
+    
+    .left-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .right-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .header {
+        padding: 1rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .car-img {
+        max-height: 150px;
+    }
+    
+    .options {
+        gap: 0.8rem;
+    }
+    
+    .result-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-container {
+        border-radius: 10px;
+        min-height: auto;
+    }
+    
+    .left-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .right-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .car-image {
+        margin-top: 1rem;
+    }
+    
+    .car-img {
+        max-height: 120px;
+    }
+    
+    .result-item {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Otimizações para performance */
+.question-screen {
+    will-change: opacity;
+}
+
+.option-btn {
+    will-change: transform, background-color;
+}
+
+.progress-fill {
+    will-change: width;
+}
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states para acessibilidade */
+.option-btn:focus,
+.cta-button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.option-btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.option-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

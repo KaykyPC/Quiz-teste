@@ -1,0 +1,8 @@
+Esta pasta é para as imagens do quiz.
+
+Imagens necessárias:
+- logo.png (sua logo PNG para o canto superior esquerdo)
+- france-flag.png (bandeira da França para o header)
+- car.png (imagem do carro Volkswagen)
+
+Você pode adicionar essas imagens posteriormente ou usar URLs de imagens online.
