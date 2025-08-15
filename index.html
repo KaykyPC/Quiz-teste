@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Carros - Financiamento Personalizado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="flag-container">
+                <div class="brazil-flag">
+                    <div class="flag-green"></div>
+                    <div class="flag-yellow">
+                        <div class="flag-blue">
+                            <div class="flag-stars"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="quiz-container">
+            <!-- Question 1 -->
+            <div class="question-screen active" id="question1">
+                <!-- Left Section -->
+                <div class="left-section">
+                    <h1 class="title">Financiamento personalizado</h1>
+                    <p class="subtitle">Vamos encontrar a melhor opção para você</p>
+                    
+                    <div class="car-image">
+                        <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" 
+                             alt="Carro Volkswagen" 
+                             class="car-img"
+                             loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="right-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <div class="question-content">
+                        <h2 class="question-title">Qual é a faixa de preço do carro que você quer comprar?</h2>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-value="25000-50000" onclick="selectAnswer('25000-50000', 'De R$ 25.000 a R$ 50.000')">
+                                De R$ 25.000 a R$ 50.000
+                            </button>
+                            <button class="option-btn" data-value="50000-90000" onclick="selectAnswer('50000-90000', 'De R$ 50.000 a R$ 90.000')">
+                                De R$ 50.000 a R$ 90.000
+                            </button>
+                            <button class="option-btn" data-value="90000-125000" onclick="selectAnswer('90000-125000', 'De R$ 90.000 a R$ 125.000')">
+                                De R$ 90.000 a R$ 125.000
+                            </button>
+                            <button class="option-btn" data-value="125000+" onclick="selectAnswer('125000+', 'Mais de R$ 125.000')">
+                                Mais de R$ 125.000
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-screen" id="question2">
+                <!-- Left Section -->
+                <div class="left-section">
+                    <h1 class="title">Financiamento personalizado</h1>
+                    <p class="subtitle">Vamos encontrar a melhor opção para você</p>
+                    
+                    <div class="car-image">
+                        <img src="https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=400&h=250" 
+                             alt="Carro Volkswagen" 
+                             class="car-img"
+                             loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="right-section">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <div class="question-content">
+                        <h2 class="question-title">Quanto você gostaria de pagar por mês pelo seu carro?</h2>
+                        
+                        <div class="options">
+                            <button class="option-btn" data-value="0-750" onclick="selectAnswer('0-750', 'Menos de R$ 750')">
+                                Menos de R$ 750
+                            </button>
+                            <button class="option-btn" data-value="750-1250" onclick="selectAnswer('750-1250', 'De R$ 750 a R$ 1.250')">
+                                De R$ 750 a R$ 1.250
+                            </button>
+                            <button class="option-btn" data-value="1250-1750" onclick="selectAnswer('1250-1750', 'De R$ 1.250 a R$ 1.750')">
+                                De R$ 1.250 a R$ 1.750
+                            </button>
+                            <button class="option-btn" data-value="1750+" onclick="selectAnswer('1750+', 'Mais de R$ 1.750')">
+                                Mais de R$ 1.750
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="question-screen" id="result">
+                <div class="result-content">
+                    <h1 class="result-title">Parabéns! Encontramos opções para você!</h1>
+                    <p class="result-subtitle">Com base nas suas respostas, temos as melhores condições de financiamento.</p>
+                    
+                    <div class="result-card">
+                        <h3>Suas opções de financiamento:</h3>
+                        
+                        <div class="result-details" id="resultDetails">
+                            <!-- Será preenchido dinamicamente -->
+                        </div>
+                        
+                        <button class="cta-button" onclick="handleRedirect()">
+                            Solicitar Proposta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
